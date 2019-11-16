@@ -12,8 +12,8 @@
     <title>GetEmployes</title>
 </head>
 <body>
-    <@Html.ActionLink("Список сотрудников", "GetEmployes", "Home")
-    <table>
+    @Html.ActionLink("Список сотрудников", "GetEmployes", "Employees")
+    <table class="table">
         <thead>
             <tr>
                 <th>Фамилия</th>
@@ -26,16 +26,15 @@
 
         <tbody>
             <tr>
-                <td>@Model.Id</td>
                 <td>@Model.SecondName</td>
                 <td>@Model.FirstName</td>
                 <td>@Model.Patronymic</td>
                 <td>@Model.Age</td>
                 <td>@Model.BirtDay</td>
             </tr>
-            
+
         </tbody>
     </table>
-
+    <a asp-action="EditEmployee" asp-controller="Employees" asp-route-emploeeId="@Model.Id">Редактировать</a>
 </body>
 </html>
