@@ -13,7 +13,7 @@
     <title>GetEmployes</title>
 </head>
 <body>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Фамилия</th>
@@ -27,15 +27,15 @@
             @foreach (var employee in Model)
             {
                 <tr>
-                    <!--<td>@employee.Id</td>-->
-                    <td>@Html.ActionLink(employee.SecondName, "GetEmployee", "Home", new { employeeId = employee.Id })</td>
-                    <td>@Html.ActionLink(employee.FirstName, "GetEmployee", "Home", new { employeeId = employee.Id })</td>
-                    <td>@Html.ActionLink(employee.Patronymic, "GetEmployee", "Home", new { employeeId = employee.Id })</td>
-                    <td>@Html.ActionLink(employee.Age.ToString(), "GetEmployee", "Home", new { employeeId = employee.Id })</td>
+                    <td>@Html.ActionLink(employee.SecondName, "GetEmployee", "Employees", new { employeeId = employee.Id })</td>
+                    <td>@Html.ActionLink(employee.FirstName, "GetEmployee", "Employees", new { employeeId = employee.Id })</td>
+                    <td>@Html.ActionLink(employee.Patronymic, "GetEmployee", "Employees", new { employeeId = employee.Id })</td>
+                    <td>@Html.ActionLink(employee.Age.ToString(), "GetEmployee", "Employees", new { employeeId = employee.Id })</td>
                 </tr>
             }
         </tbody>
     </table>
+    
 
 </body>
 </html>
