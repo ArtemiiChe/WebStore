@@ -46,15 +46,29 @@ namespace WebStore.Controllers
         [HttpPost]
         public IActionResult AddNewEmployee(EmployeeView employee)
         {
-            employee.Id = _EmployeesData.GetAll().Count() + 1;
-            _EmployeesData.Add(employee);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _EmployeesData.Add(employee);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return Content($"Ошибка редактирования: {ex.Message}");
+            }
         }
 
         public IActionResult EditEmployee(int emploeeId)
         {
-            var employee = _EmployeesData.GetAll().First(it => it.Id == emploeeId);
-            return View(employee);
+            try
+            {
+                var employee = _EmployeesData.GetAll().First(it => it.Id == emploeeId);
+                return View(employee);
+            }
+            catch (Exception ex)
+            {
+                return Content($"Ошибка редактирования: {ex.Message}");
+            }
+            
         }
         [HttpPost]
         public IActionResult EditEmployee(EmployeeView employee)
