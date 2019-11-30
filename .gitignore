@@ -1,0 +1,7 @@
+*.dll
+/.vs/*
+/WebStore/bin/*
+/WebStore/obj/*
+/WebStore.Domain/bin/*
+/WebStore.Domain/obj/*
+/WebStore/wwwroot/lib/*
