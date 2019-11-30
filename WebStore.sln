@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStore", "WebStore\WebStore.csproj", "{3DE2914C-14B6-4EBE-9BBB-08A125349C59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore", "WebStore\WebStore.csproj", "{3DE2914C-14B6-4EBE-9BBB-08A125349C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStore.Domain", "WebStore.Domain\WebStore.Domain.csproj", "{2954D58E-B457-4CD7-8680-CBFC72378EFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3DE2914C-14B6-4EBE-9BBB-08A125349C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DE2914C-14B6-4EBE-9BBB-08A125349C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DE2914C-14B6-4EBE-9BBB-08A125349C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2954D58E-B457-4CD7-8680-CBFC72378EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2954D58E-B457-4CD7-8680-CBFC72378EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2954D58E-B457-4CD7-8680-CBFC72378EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2954D58E-B457-4CD7-8680-CBFC72378EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
