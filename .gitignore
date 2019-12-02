@@ -5,3 +5,5 @@
 /WebStore.Domain/bin/*
 /WebStore.Domain/obj/*
 /WebStore/wwwroot/lib/*
+/WebStore.DAL/bin/*
+/WebStore.DAL/obj/*
