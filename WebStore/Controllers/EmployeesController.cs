@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using WebStore.ViewModels;
 using WebStore.Infrastructure.Interfaces;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebStore.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
         private readonly IConfiguration _Configuration;
