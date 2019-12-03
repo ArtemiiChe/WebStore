@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WebStore.Infrastructure.Interfaces;
 using WebStore.ViewModels;
 
@@ -11,9 +10,9 @@ namespace WebStore.Infrastructure.Services
     {
         private readonly List<EmployeeView> _Employees = new List<EmployeeView>
         {
-            new EmployeeView { Id = 1, SecondName = "Иванов", FirstName = "Иван", Patronymic = "Иванович", Age = 35, BirtDay = new DateTime(1984, 8, 20) },
-            new EmployeeView { Id = 2, SecondName = "Петров", FirstName = "Пётр", Patronymic = "Петрович", Age = 25, BirtDay = new DateTime(1994, 7, 19) },
-            new EmployeeView { Id = 3, SecondName = "Сидоров", FirstName = "Сидор", Patronymic = "Сидорович", Age = 18, BirtDay = new DateTime(2001, 6, 18) },
+            new EmployeeView { Id = 1, SecondName = "Иванов", FirstName = "Иван", Patronymic = "Иванович", Age = 35 },
+            new EmployeeView { Id = 2, SecondName = "Петров", FirstName = "Пётр", Patronymic = "Петрович", Age = 25 },
+            new EmployeeView { Id = 3, SecondName = "Сидоров", FirstName = "Сидор", Patronymic = "Сидорович", Age = 18 },
         };
 
         public IEnumerable<EmployeeView> GetAll() => _Employees;
@@ -22,7 +21,7 @@ namespace WebStore.Infrastructure.Services
 
         public void Add(EmployeeView Employee)
         {
-            if (Employee is null)
+            if(Employee is null)
                 throw new ArgumentNullException(nameof(Employee));
 
             Employee.Id = _Employees.Count == 0 ? 1 : _Employees.Max(e => e.Id) + 1;
@@ -35,7 +34,7 @@ namespace WebStore.Infrastructure.Services
                 throw new ArgumentNullException(nameof(Employee));
 
             var db_employee = GetById(id);
-            if (db_employee is null) return;
+            if(db_employee is null) return;
 
             db_employee.FirstName = Employee.FirstName;
             db_employee.SecondName = Employee.SecondName;
@@ -46,10 +45,9 @@ namespace WebStore.Infrastructure.Services
         public bool Delete(int id)
         {
             var db_employee = GetById(id);
-            if (db_employee is null) return false;
-            return _Employees.Remove(db_employee);
+            return db_employee != null && _Employees.Remove(db_employee);
         }
 
-        public void SaveChanges() { }
+        public void SaveChanges() {  }
     }
 }
